@@ -2,6 +2,6 @@
 ####
 # Server 
 #
-config*
-node_modules/*
+*config*
+old/node_modules/*
 *.DS_Store
