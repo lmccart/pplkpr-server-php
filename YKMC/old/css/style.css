@@ -1,0 +1,183 @@
+* {
+	margin: 0;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+ 	height: 100%;
+  	margin: 0 auto -1.25em;
+}
+
+
+body, html {
+	font: 0.9em 'CaeciliaLTStd55Roman', Helvetica, Arial, sans-serif;
+	text-align: left;
+	padding: 0px;
+	/*overflow: hidden;*/
+	height: 100%;
+	color: #404040;
+}
+
+body {
+	margin: 0;
+}
+
+h1 { 
+	font: 1.2em 'CaeciliaLTStd55Roman', Helvetica, Arial, sans-serif;
+	padding: 40px 0 0 0;
+	text-align: center;
+}
+
+
+h2 { 
+	font: 1.0em 'CaeciliaLTStd55Roman', Helvetica, Arial, sans-serif;
+	padding: 20px 0;
+	text-align: center;
+	font-weight: bold;
+}
+
+.textfield {
+	color: #333333;
+	background: #F7F7F7;
+	border: 1px solid #CCCCCC;
+	padding-left: 1px;
+}
+
+a, .clickable, .clickable_who_else, button {
+	color: rgba(40, 40, 40, 1.0);
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	background-color:none;
+	text-align: center  !important;
+	text-decoration:underline;
+	font: 1.0em 'CaeciliaLTStd55Roman', Helvetica, Arial, sans-serif !important;
+	background: none !important;
+}
+
+.err {
+	padding-top: 20px;
+	color: rgba(255, 0, 0, 1.0);
+	list-style:none;
+}
+
+.time {
+	color: rgba(160, 160, 160, 1.0);
+	font-size:0.6em;
+}
+
+button {
+	text-decoration: none !important;
+}
+
+
+ul .opts a, ul .opts .clickable, ul .opts button, .opts, #flipbook a {
+	text-decoration: none !important;
+}
+
+.clickable_who_else, .who_else {
+	color: rgba(115, 189, 216, 0.75);
+}
+
+textarea {
+	-webkit-appearance: textarea;
+	background-color: white;
+	border: 1px solid;
+	border-image: initial;
+	-webkit-rtl-ordering: logical;
+	-webkit-user-select: text;
+	-webkit-box-orient: vertical;
+	resize: auto;
+	cursor: auto;
+	padding: 2px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+a:hover, .clickable:hover, button:hover, .clickable_who_else:hover, .who_else:hover {
+	color: #CCCCCC;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+th {
+	font-weight: normal;
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+/* TEXT PAGES */
+#text {
+	width: 640px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+
+#text-inner {
+	outline: #CCCCCC solid 1px;
+	text-align: left;
+	vertical-align: middle;
+	padding: 20px;
+}
+
+
+#text p {
+	margin-bottom: 1em;
+	padding: 2em;
+}
+
+#text table {
+	width: auto;
+	padding: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+#text table input .tab {
+	color: #FFFFFF;
+	border: none;
+	text-decoration:underline !important;
+	cursor: pointer;
+	padding: 0;
+	background-color:none;
+	text-align: center  !important;
+	font: 1.0em 'CaeciliaLTStd55Roman', Helvetica, Arial, sans-serif !important;
+	background: #404040;
+	
+}
+
+/* FOOTER */
+#footer, .push {
+	height: 1.25em;
+}
+
+#footer {
+	position: fixed;
+}
+
+.tab {
+	background-color: #404040;
+	margin: 0 10px 0 0;
+	padding: 5px;
+}
+
+.tab a {
+	color: #FFFFFF;
+	text-decoration: none !important;
+}
+
+
+/* FONT */
+@font-face {
+	font-family: 'CaeciliaLTStd55Roman';
+	src: url('CaeciliaLTStd-Roman.eot');
+	src: local('Caecilia LT Std'), local('CaeciliaLTStd-Roman'), url('CaeciliaLTStd-Roman.woff') format('woff'), url('CaeciliaLTStd-Roman.ttf') format('truetype');
+}
+
