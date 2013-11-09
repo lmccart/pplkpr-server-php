@@ -1,6 +1,8 @@
 <?php
 	include('config.php');	
 	
+	$emotions = array('Excited', 'Aroused', 'Angry', 'Scared', 'Anxious', 'Bored', 'Calm');
+	
 	connect();
 	
 	function connect() {
@@ -18,24 +20,49 @@
 
 	}
 	
-	function submit($user, $name, $moments, $rating) {
-/*
+	function submit($user, $name, $moments) {
+
 		$moments = explode(";", $moments);
+		$n = count($moments)+1;
+
+		global $emotions;
 		foreach ($moments as $m) {
-			$qry = "INSERT INTO interactions(user, name, moment, rating) 
-			VALUES('$user', '$name', '$moment', '$rating')";
-			mysql_query($qry);
+			if (in_array($m, $emotions)) {
+				$qry = "INSERT INTO ".$m."(user, name, rating) 
+					VALUES('$user', '$name', '$n')";
+				mysql_query($qry);
+			}					
 		}
-*/
 
-		$qry = "INSERT INTO interactions(user, name, moments, rating) 
-			VALUES('$user', '$name', '$moment', '$rating')";
-
-		$result=mysql_query($qry);
+		getMaxs($user, $name);
 	}	
 	
-	function getMaxs($user) {
+	function getMaxs($user, $name) {
+
+		global $emotions;
+
+		$response = array();
 		
+		foreach ($emotions as $e) {
+			$qry = "SELECT COUNT(*) AS `Rows`, name 
+							FROM ".$e." 
+							WHERE user='$user'
+							GROUP BY name
+							ORDER BY `Rows` DESC
+							LIMIT 1";
+							
+			$res = mysql_query($qry);
+			if ($res) {
+			 	$r = mysql_fetch_assoc($res);
+			 	if ($r['name']) {
+				 	$response[$e] = $r['name'];
+				}
+			}					
+		}
+		echo json_encode($response);
+		    //header('Content-type: application/json');
+    //echo json_encode(array("hi"));
+		//return json_encode($arr, JSON_FORCE_OBJECT);
 	}
 
 	//Function to sanitize values received from the form. Prevents SQL injection
