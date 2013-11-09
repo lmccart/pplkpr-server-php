@@ -19,10 +19,24 @@
 	}
 	
 	function submit($user, $name, $moments, $rating) {
+/*
+		$moments = explode(";", $moments);
+		foreach ($moments as $m) {
+			$qry = "INSERT INTO interactions(user, name, moment, rating) 
+			VALUES('$user', '$name', '$moment', '$rating')";
+			mysql_query($qry);
+		}
+*/
+
 		$qry = "INSERT INTO interactions(user, name, moments, rating) 
-		VALUES('$user', '$name', '$moments', '$rating')";
+			VALUES('$user', '$name', '$moment', '$rating')";
+
 		$result=mysql_query($qry);
 	}	
+	
+	function getMaxs($user) {
+		
+	}
 
 	//Function to sanitize values received from the form. Prevents SQL injection
 	function clean($str) {
