@@ -20,19 +20,15 @@
 
 	}
 	
-	function submit($user, $name, $moments) {
-
-		$moments = explode(";", $moments);
-		$n = count($moments)+1;
+	function submit($user, $name, $emotion) {
 
 		global $emotions;
-		foreach ($moments as $m) {
-			if (in_array($m, $emotions)) {
-				$qry = "INSERT INTO ".$m."(user, name, rating) 
-					VALUES('$user', '$name', '$n')";
-				mysql_query($qry);
-			}					
-		}
+		$n = 0;
+		if (in_array($emotion, $emotions)) {
+			$qry = "INSERT INTO ".$emotion."(user, name, rating) 
+				VALUES('$user', '$name', '$n')";
+			mysql_query($qry);
+		}					
 
 		getMaxs($user, $name);
 	}	
